@@ -27,7 +27,10 @@ class Relic < Formula
 
   def install
     bin.install "relic"
-    lib.install Dir["librelic_runner.*"]
+    lib.install Dir["librelic_runner.*", "libopentui.*"]
+    Dir[lib/"libopentui.*"].each do |library|
+      bin.install_symlink library
+    end
   end
 
   test do
