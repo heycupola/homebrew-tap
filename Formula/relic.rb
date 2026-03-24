@@ -1,29 +1,28 @@
 # typed: false
 # frozen_string_literal: true
 
-# This formula is maintained in heycupola/homebrew-tap.
-# Copy this file to that repo at Formula/relic.rb after creating it.
+# This formula is maintained via the heycupola/relic release workflow.
 
 class Relic < Formula
   desc "End-to-end encrypted secret layer for developers"
   homepage "https://relic.so"
-  version "0.1.0"
+  version "0.6.7"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/heycupola/relic/releases/download/v#{version}/relic-darwin-arm64.tar.gz"
-      sha256 "PLACEHOLDER_DARWIN_ARM64_SHA256"
+      sha256 "41e4bc6f45f9b1885a5b018375b1170431dbdbda42373f80357b6ebbeeb6c8df"
     else
       url "https://github.com/heycupola/relic/releases/download/v#{version}/relic-darwin-x64.tar.gz"
-      sha256 "PLACEHOLDER_DARWIN_X64_SHA256"
+      sha256 "adb6f145ee7f9d0b6284abf25f5c992bb37199e4f75d64265055bbf20701ae76"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/heycupola/relic/releases/download/v#{version}/relic-linux-x64.tar.gz"
-      sha256 "PLACEHOLDER_LINUX_X64_SHA256"
+      sha256 "a25a03d4e3a36f70b07034aeeb76123cd7b3609474e719eb32cbf9c9a1edecba"
     end
   end
 
