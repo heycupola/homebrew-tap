@@ -7,6 +7,7 @@ class Relic < Formula
   homepage "https://relic.so"
   version "0.6.7"
   license "MIT"
+  preserve_rpath
 
   on_macos do
     if Hardware::CPU.arm?
