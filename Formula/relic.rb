@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 # This formula is maintained via the heycupola/relic release workflow.
-
 class Relic < Formula
   desc "End-to-end encrypted secret layer for developers"
   homepage "https://relic.so"
@@ -36,4 +35,3 @@ class Relic < Formula
     assert_match version.to_s, shell_output("#{bin}/relic --version")
   end
 end
-
