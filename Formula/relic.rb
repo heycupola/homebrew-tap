@@ -28,7 +28,6 @@ class Relic < Formula
   def install
     bin.install "relic"
     lib.install Dir["librelic_runner.*"]
-    lib.install Dir["relic_runner.dll"] if OS.windows?
   end
 
   test do
