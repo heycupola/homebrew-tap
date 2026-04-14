@@ -5,24 +5,24 @@
 class Relic < Formula
   desc "End-to-end encrypted secret layer for developers"
   homepage "https://relic.so"
-  version "0.9.1"
+  version "0.9.2"
   license "MIT"
   preserve_rpath
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/heycupola/relic/releases/download/v#{version}/relic-darwin-arm64.tar.gz"
-      sha256 "7fc77964933de53e7fb09afd499eff9cb0bfe53bf885e3dc943ee717f755628d"
+      sha256 "6c84044537fbc852cf13f0834fc05364b89e80386822c43955e177bf2e4e2e52"
     else
       url "https://github.com/heycupola/relic/releases/download/v#{version}/relic-darwin-x64.tar.gz"
-      sha256 "897814ee9434ff5b60e0dcf629247785bc2475bd81d39f5a4ed5b097ee7d5788"
+      sha256 "a3a6a773d38b2d08e1b3766f1f800da6ce4d5e2456a7f5b09f6165f90c48a130"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/heycupola/relic/releases/download/v#{version}/relic-linux-x64.tar.gz"
-      sha256 "4a490e1215239b80df00e446dbe8aa9e4084a1e6a49573835c4336bb64542959"
+      sha256 "066bbb83bd8990a2abde4d4dc04640ad2698a00388b495737969e6ab2d3d3bf7"
     end
   end
 
