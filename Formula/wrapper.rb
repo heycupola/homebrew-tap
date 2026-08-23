@@ -29,8 +29,8 @@ class Wrapper < Formula
   end
 
   def install
-    bin.install "bin/wrapper"
-    bin.install Dir["bin/wrapper-pty-helper-*"]
+    bin.install "wrapper"
+    bin.install Dir["wrapper-pty-helper-*"]
   end
 
   test do
