@@ -29,8 +29,13 @@ class Wrapper < Formula
   end
 
   def install
-    bin.install "bin/wrapper"
-    bin.install Dir["bin/wrapper-pty-helper-*"]
+    # Homebrew flattens a single top-level directory, so `bin/` archives
+    # stage as `wrapper` + helper at the root.
+    cd "bin" if File.exist?("bin/wrapper")
+    bin.install "wrapper"
+    helpers = Dir["wrapper-pty-helper-*"]
+    odie "missing wrapper-pty-helper binary" if helpers.empty?
+    bin.install helpers
   end
 
   test do
