@@ -5,26 +5,26 @@
 class Wrapper < Formula
   desc "Securely host and attach your terminal sessions across devices"
   homepage "https://www.wrapper.sh"
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/heycupola/wrapper/releases/download/v#{version}/wrapper-darwin-arm64.tar.gz"
-      sha256 "89dcf9175c750792b262375231cab548610618a6f610469cb8d3204ce28ce0dd"
+      sha256 "fe77304f92521c75a7b0d002b890bab8bcaf859924fc0ac542e51988bf263158"
     else
       url "https://github.com/heycupola/wrapper/releases/download/v#{version}/wrapper-darwin-x86_64.tar.gz"
-      sha256 "702f95bd6c3aa14b57e1a0bab30235771012fd9a18f3f2e24f49c2ce0ee1c721"
+      sha256 "d1aeb29cfb1095b276ec1b769187673ec4192cdc3566bc6b4f00eb98911a51e2"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/heycupola/wrapper/releases/download/v#{version}/wrapper-linux-arm64.tar.gz"
-      sha256 "1d44f56a2bc965fd207a52b56939e4c9851d189850be091b714e5bcfce5f6f28"
+      sha256 "1e47da2897deeb13ac392640d43b4879b10513f24d012e266aee93a3dc760434"
     else
       url "https://github.com/heycupola/wrapper/releases/download/v#{version}/wrapper-linux-x86_64.tar.gz"
-      sha256 "54dc8da230247cc2fbe02803605679bd8dc205eb8292aa5611379ee2cacbe3e4"
+      sha256 "903f5946286b0492f3083647df315efb5e26192a110f32262e225f2d51122b77"
     end
   end
 
@@ -36,6 +36,15 @@ class Wrapper < Formula
     helpers = Dir["wrapper-pty-helper-*"]
     odie "missing wrapper-pty-helper binary" if helpers.empty?
     bin.install helpers
+  end
+
+  def caveats
+    <<~EOS
+      If you previously installed with curl, $HOME/.wrapper/bin may shadow this
+      Homebrew binary. `wrapper --version` then keeps reporting the curl version
+      after `brew upgrade`. Re-run the curl installer, or remove $HOME/.wrapper
+      and its PATH entry, then restart your shell.
+    EOS
   end
 
   test do
