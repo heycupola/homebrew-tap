@@ -5,26 +5,26 @@
 class Wrapper < Formula
   desc "Securely host and attach your terminal sessions across devices"
   homepage "https://www.wrapper.sh"
-  version "0.2.3"
+  version "0.2.4"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/heycupola/wrapper/releases/download/v#{version}/wrapper-darwin-arm64.tar.gz"
-      sha256 "dcd827d12c3eafc7e8d2bba3cd086fec0f5a9b88c156978106129680141572c5"
+      sha256 "7e56c3438e49354b54fd8ea6874e58b2bc75c2524bd56e0ce0a196f9bd065180"
     else
       url "https://github.com/heycupola/wrapper/releases/download/v#{version}/wrapper-darwin-x86_64.tar.gz"
-      sha256 "14190d6a17393b0420d069ebbc50d1d3a424e999d1b2185f1944c31ff75bcdd9"
+      sha256 "6fd546d7f9482bf85d8d2f993cd9f445c936abbda2c28dac3d90773da60b92fc"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/heycupola/wrapper/releases/download/v#{version}/wrapper-linux-arm64.tar.gz"
-      sha256 "e7575c3ded0315a25c7a9fc9dc3253dab1692a106cac2303f521d71a47fc3994"
+      sha256 "f1475913d74f01856f6a43b6ce84a0a398c6bed4f70e0957f427b4d34f144c29"
     else
       url "https://github.com/heycupola/wrapper/releases/download/v#{version}/wrapper-linux-x86_64.tar.gz"
-      sha256 "426cbc232c73bd9d8e79da92c3c5bf7b5647a7a818e983e2cf2c9f41bbd793ba"
+      sha256 "c1c6a767c6d14a3485f35668ddc24f97682b36cff2cad15152a10ac3024f306b"
     end
   end
 
