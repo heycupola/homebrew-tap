@@ -3,26 +3,26 @@
 
 # This formula is maintained via the heycupola/relic release workflow.
 class Relic < Formula
-  desc "End-to-end encrypted secret layer for developers"
+  desc "End-to-end encrypted secrets for developers and AI agents"
   homepage "https://withrelic.com"
-  version "0.10.1"
+  version "0.10.2"
   license "MIT"
   preserve_rpath
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/heycupola/relic/releases/download/v#{version}/relic-darwin-arm64.tar.gz"
-      sha256 "44fbb4cafcdd82def9307acc17f9394109bae76ee86bb51093d56ecc47bc1a02"
+      sha256 "4e47b9146595becb017df920d5a253ab032a0db6ded04d95750adc42a0d35c1d"
     else
       url "https://github.com/heycupola/relic/releases/download/v#{version}/relic-darwin-x64.tar.gz"
-      sha256 "abf44e6ce73752c82fb8235d81cc11f67bcb86df151b3780ce0eeaff33876857"
+      sha256 "ee4dbbc05436948574678c3246c277cd150101d826aaf3c8e8f27acf59afb8e7"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/heycupola/relic/releases/download/v#{version}/relic-linux-x64.tar.gz"
-      sha256 "9bad9b2b6449056e4de7bb51b698c1b6ca3f988f16417531c9907fdba9989621"
+      sha256 "4166a5a41daeea7440c737271c4ce3929cb3683a5af37b60cd04b985e8306ca2"
     end
   end
 
